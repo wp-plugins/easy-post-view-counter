@@ -2,10 +2,10 @@
 
 Contributors: Michael Ringhus Gertz
 Tags: post views, post hits, post counter, view counter, postviews
-Donate link: LINK SENERE
+Donate link: http://ringhus.dk
 Requires at least: 2.7
 Tested up to: 3.8.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
