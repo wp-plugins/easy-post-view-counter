@@ -20,8 +20,8 @@ No need for adding codes anywhere, just plug'n'play
 == Installation ==
 
 1. Download the zip file.
-2. Extract the zip file. you will now get a folder called EasyPostViewCounter
-3. Upload the EasyPostViewCounter folder to wp-content/plugins/
+2. Extract the zip file. you will now get a folder called Easy-Post-View-Counter
+3. Upload the Easy-Post-View-Counter folder to wp-content/plugins/
 3. Activate Easy Post View Counter under admin menu
 4. Done! you are now able to see how many views you posts has
 
