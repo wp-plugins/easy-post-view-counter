@@ -2,10 +2,10 @@
 
 Contributors: Michael Ringhus Gertz
 Tags: post views, post hits, post counter, view counter, postviews
-Donate link: http://ringhus.dk
+Donate link: LINK SENERE
 Requires at least: 2.7
 Tested up to: 3.8.1
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -20,8 +20,8 @@ No need for adding codes anywhere, just plug'n'play
 == Installation ==
 
 1. Download the zip file.
-2. Extract the zip file. you will now get a folder called Easy-Post-View-Counter
-3. Upload the Easy-Post-View-Counter folder to wp-content/plugins/
+2. Extract the zip file. you will now get a folder called EasyPostViewCounter
+3. Upload the EasyPostViewCounter folder to wp-content/plugins/
 3. Activate Easy Post View Counter under admin menu
 4. Done! you are now able to see how many views you posts has
 
@@ -49,6 +49,11 @@ No it will only count views for non administrators.
 
 
 == Change Log ==
+
+= Version 1.2 =
+Fixed the sorting.
+Fixed view counter for old posts.
+
 
 = Version 1.1 =
 Made it possible to sort post be views.

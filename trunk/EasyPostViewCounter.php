@@ -1,10 +1,11 @@
 <?php
 /*
 Plugin Name: Easy Post View Counter
-Plugin URI: http://wordpress.org/extend/plugins/easy-post-views-counter/
+Plugin URI: http://wordpress.org/plugins/easy-post-view-counter
+
 Description: With this plugin you easiely can see how maby views each post has. Just see the post list page
 Author: Michael Ringhus Gertz
-Version: 1.1
+Version: 1.2
 Author URI: http://ringhus.dk/
 */
 
@@ -16,12 +17,8 @@ function EPVC_Content($content) {
 	$count = get_post_meta($postid,$key,true);
 
 	if( is_single() AND !current_user_can('manage_options') ) {
-		if( empty($count) ) {
-			add_post_meta($postid,$key,'1');
-		} else {
-			$count++;
-			update_post_meta($postid,$key,$count);
-		}
+		$count++;
+		update_post_meta($postid,$key,$count);
 	}
 	return $content;
 }
@@ -42,7 +39,7 @@ function EPVC_colums_content($column_name,$postid) {
 	if( $column_name == 'EPVC' ) {
 		$count = get_post_meta($postid,'EasyPostViewCounter',true);
 		if( empty($count) ) {
-			echo "0";
+			echo "0 - No views yet";
 		} else {
 			echo $count;
 		}
@@ -61,15 +58,40 @@ add_filter('manage_edit-post_sortable_columns','EPVC_sort');
 
 
 // sort content by EPVC info
-function EPVC_sort_by($vars ){
-	if ( isset( $vars["orderby"] ) && "EPVC" == $vars["orderby"] ) {
-		$vars = array_merge( $vars, array(
-			"orderby" => "EPVC"
-		) );
-	}
-	return $vars;
+function EPVC_sort_by( $vars ) {
+    if ( isset( $vars['orderby'] ) && 'EPVC' == $vars['orderby'] ) {
+        $vars = array_merge( $vars, array(
+            'meta_key' => 'EasyPostViewCounter',
+            'orderby' => 'EasyPostViewCounter'
+        ) );
+    }
+ 
+    return $vars;
 }
-add_filter( "request", "EPVC_sort_by" );
+add_filter( 'request', 'EPVC_sort_by' );
+
+
+
+
+// This part is executed when plugin is being activated.
+function EPVC_Activation() {
+	$key = "EasyPostViewCounter";
+
+	$posts = get_posts();
+	foreach( $posts as $p) {
+		$postID = $p->ID;
+		$count = get_post_meta($postid,$key,true);
+
+		if( empty($count) ) {
+			add_post_meta($postID,$key,'0');
+		}
+	}
+}
+
+register_activation_hook(__FILE__,'EPVC_Activation');
+
+
+
 
 
 
