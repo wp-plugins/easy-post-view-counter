@@ -1,8 +1,8 @@
-=== Easy Post Views Counter ===
+=== Easy Post View Counter ===
 
 Contributors: Michael Ringhus Gertz
 Tags: post views, post hits, post counter, view counter, postviews
-Donate link: LINK SENERE
+Donate link: http://ringhus.dk
 Requires at least: 2.7
 Tested up to: 3.8.1
 Stable tag: 1.2
@@ -61,6 +61,9 @@ Made it possible to sort post be views.
 = Version 1.0 =
 First released version
 
+== Thumbs Up ==
+
+If you like this plugin, please rate it at http://wordpress.org/support/view/plugin-reviews/easy-post-view-counter
 
 
 
