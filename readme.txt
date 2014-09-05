@@ -4,16 +4,16 @@ Contributors: Michael Ringhus Gertz
 Tags: post views, post hits, post counter, view counter, postviews
 Donate link: http://ringhus.dk
 Requires at least: 2.7
-Tested up to: 3.8.1
-Stable tag: 1.2
+Tested up to: 4.0
+Stable tag: 1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Whit this plugin you can see how maby views each single post has.
+With this plugin you can see how many views a single post has.
 
 == Description ==
 
-With this plugin you can see how many views each single post has.
+With this plugin you can see how many views a single post has.
 Just link on the All Post link in the left menu
 No need for adding codes anywhere, just plug'n'play
 
@@ -50,20 +50,12 @@ No it will only count views for non administrators.
 
 == Change Log ==
 
-= Version 1.2 =
-Fixed the sorting.
-Fixed view counter for old posts.
-
-
 = Version 1.1 =
 Made it possible to sort post be views.
 
 = Version 1.0 =
 First released version
 
-== Thumbs Up ==
-
-If you like this plugin, please rate it at http://wordpress.org/support/view/plugin-reviews/easy-post-view-counter
 
 
 
