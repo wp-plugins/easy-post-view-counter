@@ -5,7 +5,7 @@ Tags: post views, post hits, post counter, view counter, postviews
 Donate link: http://ringhus.dk
 Requires at least: 2.7
 Tested up to: 4.0
-Stable tag: 1.0
+Stable tag: 1.2.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -49,6 +49,9 @@ No it will only count views for non administrators.
 
 
 == Change Log ==
+
+= Version 1.2.1 =
+Ensured that this version worked with Wordpress 4.0
 
 = Version 1.1 =
 Made it possible to sort post be views.
