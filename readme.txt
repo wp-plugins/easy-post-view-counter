@@ -39,9 +39,6 @@ Under Custome Fields, there is a entry called EasyPostViewCounter, change the va
 = Will it count my own views? =
 No it will only count views for non administrators.
 
-== Screenshots ==
-= There is no screenshots yet =
-
 
 == Change Log ==
 
