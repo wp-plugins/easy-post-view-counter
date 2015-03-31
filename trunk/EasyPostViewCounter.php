@@ -4,29 +4,57 @@ Plugin Name: Easy Post View Counter
 Plugin URI: http://wordpress.org/extend/plugins/easy-post-views-counter/
 Description: With this plugin you easily can see how many views each post has. Just see the post list page
 Author: Michael Ringhus Gertz
-Version: 1.2.1
+Version: 1.2.2
 Author URI: http://ringhus.dk/
 */
+
+session_start();
+
+
+function myinit () {
+	// Get PostID
+	$postid = url_to_postid("http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']);
+
+	// Cookie Name,
+	$cookiename = "EasyPostViewCounter_".$postid;
+
+  	// Chech if the post has been loaded before, after the browser was opened.
+	// 1 = first load of post, 2 = second load of post
+	// If session is empty, its because it hasnt been loaded before.
+	if( $_SESSION[$cookiename] == "" ) {
+		$_SESSION[$cookiename] = "1";
+	} else {
+		$_SESSION[$cookiename] = "2";
+	}
+}
+add_action('init','myinit');
+
 
 
 /* This functions is used for tracking when a post is viewed. */
 function EPVC_Content($content) {
-	$key = "EasyPostViewCounter";
+
 	$postid = get_the_id();
+	$cookiename = "EasyPostViewCounter_".$postid;
 	$count = get_post_meta($postid,$key,true);
 
+    // Check if its a single, and the users isnt an admin
 	if( is_single() AND !current_user_can('manage_options') ) {
-		if( empty($count) ) {
-			add_post_meta($postid,$key,'1');
-		} else {
-			$count++;
-			update_post_meta($postid,$key,$count);
+
+     	// Check if the session is set to 1. if so the post has to be counted.
+		if( $_SESSION[$cookiename] == "1" ) {
+			 if( empty($count) ) {
+    			add_post_meta($postid,$key,'1');
+    		} else {
+    			$count++;
+    			update_post_meta($postid,$key,$count);
+    		}
 		}
 	}
+
 	return $content;
 }
 add_filter('the_content','EPVC_content');
-
 
 
 // add column to post list
@@ -50,41 +78,4 @@ function EPVC_colums_content($column_name,$postid) {
 	}
 }
 add_action('manage_posts_custom_column','EPVC_colums_content',10,2);
-
-
-/*
-// THIS FUNCTION HAS BEEN REMOVE, MAYBE IT WILL GET BACK IN LATER
-// Make header column clickable
-function EPVC_sort( $columns ) {
-	$columns["EPVC"] = "EPVC";
-	return $columns;
-}
-add_filter('manage_edit-post_sortable_columns','EPVC_sort');
-*/
-
-
-/*
-// THIS FUNCTION HAS BEEN REMOVE, MAYBE IT WILL GET BACK IN LATER
-// sort content by EPVC info
-function EPVC_sort_by( $vars ){
-
-        echo "vars";
-    	print_r($vars);
-
-
-
-	if ( isset( $vars["orderby"] ) && $vars["orderby"] == "EPVC" ) {
-        $vars = array_merge( $vars, array(
-			"orderby" => "EPVC"
-		) );
-	}
-    
-    print_r($vars);
-	return $vars;
-}
-add_filter( "request", "EPVC_sort_by" );
-*/
-
-
-
 ?>
