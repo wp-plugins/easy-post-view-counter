@@ -4,7 +4,7 @@ Plugin Name: Easy Post View Counter
 Plugin URI: http://wordpress.org/extend/plugins/easy-post-views-counter/
 Description: With this plugin you easily can see how many views each post has. Just see the post list page
 Author: Michael Ringhus Gertz
-Version: 1.2.2
+Version: 1.2.3
 Author URI: http://ringhus.dk/
 */
 
