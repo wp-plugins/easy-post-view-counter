@@ -5,7 +5,7 @@ Tags: post views, post hits, post counter, view counter, postviews
 Donate link: http://ringhus.dk
 Requires at least: 2.7
 Tested up to: 4.1.1
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -39,8 +39,14 @@ Under Custome Fields, there is a entry called EasyPostViewCounter, change the va
 = Will it count my own views? =
 No it will only count views for non administrators.
 
+== Screenshots ==
+= There is no screenshots yet =
+
 
 == Change Log ==
+
+= Version 1.2.3 =
+- Fixed counting issue
 
 = Version 1.2.2 =
 - Fixed issue where posts are being counted multible times.

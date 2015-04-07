@@ -35,7 +35,8 @@ add_action('init','myinit');
 function EPVC_Content($content) {
 
 	$postid = get_the_id();
-	$cookiename = "EasyPostViewCounter_".$postid;
+	$key = "EasyPostViewCounter";
+	$cookiename = $key."_".$postid;
 	$count = get_post_meta($postid,$key,true);
 
     // Check if its a single, and the users isnt an admin
